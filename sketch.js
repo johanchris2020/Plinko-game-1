@@ -65,15 +65,17 @@ for(var k = 0; k <=width; k = k+80)
     plinkos.push(new Plinko(j,305))
   }
 
-    if(frameCount % 60 === 0)
-  {
-    particles.push (new Particle(random(width/2-10, width/2+10),10,10));
-  }
 }
 
 function draw() {
   background(0);
   Engine.update(engine, 25);
+
+  if(frameCount % 90 === 0)
+  {
+    particles.push (new Particle(random(width/2-10, width/2+10),10,10));
+  }
+
   for(var i = 0; i < particles.length; i++)
   {
     particles[i].display();
